@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="project.controller.ArtworkOverviewController">
+   <children>
+      <HBox alignment="CENTER" layoutX="177.0" layoutY="361.0" spacing="10.0" AnchorPane.bottomAnchor="20.0" AnchorPane.leftAnchor="190.0" AnchorPane.rightAnchor="190.0">
+         <children>
+            <Button mnemonicParsing="false" onAction="#handleNewArtwork" text="Ajouter" />
+            <Button mnemonicParsing="false" onAction="#handleEditArtwork" text="Modifier" />
+            <Button mnemonicParsing="false" onAction="#handleDeleteArtwork" text="Supprimer" />
+         </children>
+      </HBox>
+      <Label alignment="CENTER" layoutX="277.0" layoutY="6.0" text="Recherche" AnchorPane.leftAnchor="250.0" AnchorPane.rightAnchor="250.0" AnchorPane.topAnchor="5.0">
+         <font>
+            <Font name="Berlin Sans FB" size="24.0" />
+         </font></Label>
+      <TextField fx:id="searchTitleField" alignment="CENTER" layoutX="224.0" layoutY="37.0" prefHeight="25.0" prefWidth="150.0" AnchorPane.leftAnchor="300.0" AnchorPane.rightAnchor="300.0" />
+      <Text layoutX="239.0" layoutY="55.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Titre : ">
+         <font>
+            <Font size="18.0" />
+         </font></Text>
+      <TableView fx:id="artworkListTableView" layoutY="118.0" prefHeight="265.0" prefWidth="600.0" AnchorPane.bottomAnchor="140.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="110.0">
+        <columns>
+            <TableColumn fx:id="idListColumn" prefWidth="22.0" text="Id" visible="false" />
+          <TableColumn fx:id="titleListColumn" prefWidth="213.0" text="Titre" />
+          <TableColumn fx:id="categoryListColumn" prefWidth="78.0" text="Categorie" />
+          <TableColumn fx:id="genreListColumn" prefWidth="102.0" text="Genre" />
+          <TableColumn fx:id="creatorListColumn" prefWidth="134.0" text="Createur" />
+          <TableColumn fx:id="supportListColumn" prefWidth="74.0" text="Support" />
+          <TableColumn fx:id="yearsListColumn" prefWidth="115.0" text="Année parution" />
+          <TableColumn fx:id="ratingListColumn" prefWidth="58.0" text="Note" />
+        </columns>
+      </TableView>
+      <HBox alignment="CENTER" layoutX="34.0" layoutY="75.0" spacing="10.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0">
+         <children>
+            <ComboBox fx:id="searchCatCB" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="25.0" prefWidth="150.0" />
+            <ComboBox fx:id="searchKindCB" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="25.0" prefWidth="150.0" />
+            <ComboBox fx:id="searchCreatorCB" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="25.0" prefWidth="150.0" />
+            <ComboBox fx:id="searchSupportCB" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="25.0" prefWidth="150.0" />
+            <ComboBox fx:id="searchRatingCB" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="25.0" prefWidth="70.0" />
+         </children>
+      </HBox>
+      <HBox alignment="CENTER" layoutX="166.0" layoutY="338.0" spacing="30.0" AnchorPane.bottomAnchor="100.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="200.0" AnchorPane.topAnchor="470.0">
+         <children>
+            <Label fx:id="idLabelSelect" text="Label" />
+            <Label fx:id="titleLabelSelect" text="Label" />
+            <Label fx:id="ratingLabelSelect" text="Label" />
+            <Label fx:id="categoryLabelSelect" text="Label" />
+            <Label fx:id="supportLabelSelect" text="Label" />
+         </children>
+      </HBox>
+      <HBox alignment="CENTER" layoutX="330.0" layoutY="508.0" spacing="20.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="200.0">
+         <children>
+            <Label fx:id="yearLabelSelect" text="Label" />
+            <Label fx:id="genreLabelSelect" text="Label" />
+            <Label fx:id="creatorLabelSelect" text="Label" />
+            <Label fx:id="originLabelSelect" text="Label" />
+         </children>
+      </HBox>
+      <Label fx:id="commentLabelSelect" layoutX="623.0" layoutY="458.0" prefHeight="25.0" prefWidth="82.0" text="Commentaire :" AnchorPane.rightAnchor="90.0" AnchorPane.topAnchor="455.0" />
+      <TextArea fx:id="commentTextAreaSelect" layoutX="572.0" layoutY="492.0" prefHeight="98.0" prefWidth="200.0" AnchorPane.bottomAnchor="10.0" AnchorPane.rightAnchor="30.0" AnchorPane.topAnchor="480.0" />
+      <ImageView fitHeight="60.0" fitWidth="114.0" layoutX="10.0" layoutY="3.0" pickOnBounds="true" preserveRatio="true" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="676.0" AnchorPane.topAnchor="0.0">
+         <image>
+            <Image url="@../resources/logo_smartlib.png" />
+         </image>
+      </ImageView>
+   </children>
+</AnchorPane>
